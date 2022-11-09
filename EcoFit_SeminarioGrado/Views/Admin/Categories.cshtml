@@ -1,0 +1,57 @@
+﻿@model List<EcoFit_SeminarioGrado.DAL.Tbl_Category>
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Categorías</li>
+
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Category Details
+            <a href="../Admin/AddCategory" class="btn btn-info pull-right fa fa-plus">Añadir Nuevo</a>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre Categoría</th>
+                            <th>Acción</th>
+
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre Categoría</th>
+                            <th>Acción</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>@(Model.IndexOf(item)+1)</td>
+                                <td>@item.CategoryName</td>
+                                <td><a href="#">Edit</a></td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
